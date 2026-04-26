@@ -1,9 +1,0 @@
-{
-  "cleanUrls": false,
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/landing-page.html"
-    }
-  ]
-}
