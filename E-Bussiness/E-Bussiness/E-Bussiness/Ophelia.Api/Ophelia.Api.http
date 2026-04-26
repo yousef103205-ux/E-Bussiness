@@ -1,0 +1,19 @@
+@Ophelia.Api_HostAddress = http://localhost:5159
+
+GET {{Ophelia.Api_HostAddress}}/api/products
+Accept: application/json
+
+###
+GET {{Ophelia.Api_HostAddress}}/api/cart?sessionId=guest
+Accept: application/json
+
+###
+POST {{Ophelia.Api_HostAddress}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "quantity": 1,
+  "material": "18k Yellow Gold / Freshwater Pearl",
+  "sessionId": "guest"
+}

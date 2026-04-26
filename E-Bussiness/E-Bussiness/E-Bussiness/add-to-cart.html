@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ophelia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="bootstrap.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="succss & add-to-cart.css">
+  <link rel="stylesheet" href="features.css">
+  <link rel="icon" type="image/png" href="Photos/LOGO.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+
+
+
+  <!-- Top + Navbar Wrapper -->
+  <div class="top-wrapper fixed-top">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+      Free shipping on orders over 1000$ &bull; Complimentary gift wrapping
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img src="./Photos/LOGO.png" class="logo">
+          <span class="brand-name">OPHELIA</span>
+        </a>
+
+        <!-- Mobile button -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse justify-content-center" id="nav">
+          <ul class="navbar-nav gap-4 nav-links">
+            <li class="nav-item"><a class="nav-link nav-custom" href="#">Rings</a></li>
+            <li class="nav-item"><a class="nav-link nav-custom" href="#">Earrings</a></li>
+            <li class="nav-item"><a class="nav-link nav-custom" href="#">Necklaces</a></li>
+            <li class="nav-item"><a class="nav-link nav-custom" href="#">Bracelets</a></li>
+            <li class="nav-item"><a class="nav-link nav-custom" href="#">Gifts</a></li>
+          </ul>
+        </div>
+
+        <!-- Icons -->
+        <div class="d-flex align-items-center gap-3 nav-icons">
+          <i class="bi bi-search"></i>
+          <i class="bi bi-heart"></i>
+          <div class="cart-icon" id="cart-btn">
+            <i class="bi bi-bag"></i>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+  </div>
+
+
+  <!-- Check out -->
+  <section class="checkout-page py-4">
+    <div class="container custom-container">
+
+      <div class="row g-4">
+
+        <!-- LEFT FORM -->
+        <div class="col-lg-8">
+          <div class="checkout-form p-4">
+
+            <form id="checkout-form" novalidate>
+
+              <div id="checkout-error" class="checkout-error" hidden></div>
+
+              <!-- Row 1 -->
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-full-name">Full Name</label>
+                  <input id="checkout-full-name" data-field="fullName" type="text" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-company">Company Name <span class="optional">(Optional)</span></label>
+                  <input id="checkout-company" data-field="companyName" type="text" class="form-control" placeholder="Enter your company name">
+                </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-phone">Mobile Phone</label>
+                  <input id="checkout-phone" data-field="phone" type="tel" class="form-control" placeholder="01xxxxxxxxx" inputmode="numeric" maxlength="11" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-email">Email</label>
+                  <input id="checkout-email" data-field="email" type="email" class="form-control" placeholder="name@example.com" required>
+                </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-address">Address</label>
+                  <input id="checkout-address" data-field="address" type="text" class="form-control" placeholder="Street, building, apartment" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-country">Country</label>
+                  <select id="checkout-country" data-field="country" class="form-select" required>
+                    <option selected>Egypt</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 4 -->
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-governorate">Governorate</label>
+                  <select id="checkout-governorate" data-field="governorate" class="form-select" required>
+                    <option value="" selected>Select governorate</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-city">City</label>
+                  <select id="checkout-city" data-field="city" class="form-select" required>
+                    <option value="" selected>Select city</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 5 -->
+              <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-receipt-time">Receipt Time <span class="optional">(Optional)</span></label>
+                  <input id="checkout-receipt-time" data-field="receiptTime" type="text" class="form-control" placeholder="Preferred delivery time">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="checkout-location">Location <span class="optional">(Optional)</span></label>
+                  <input id="checkout-location" data-field="location" type="text" class="form-control" placeholder="Google Maps link or nearby landmark">
+                </div>
+              </div>
+
+              <!-- Payment Option -->
+              <div class="mt-4">
+                <h6 class="section-title payment-title">Payment Option</h6>
+
+                <div class="payment-box mt-3">
+                  <label class="payment-item active">
+                    <img src="Photos/cash.jpg" class="pay-icon" alt="">
+                    <p>Cash on Delivery</p>
+                    <input type="radio" name="pay" class="radio-style" value="Cash on Delivery" checked>
+                  </label>
+
+                  <label class="payment-item">
+                    <img src="Photos/vodafone.jpg" class="pay-icon" alt="">
+                    <p>Vodafone Cash</p>
+                    <input type="radio" name="pay" class="radio-style" value="Vodafone Cash">
+                  </label>
+
+                  <label class="payment-item">
+                    <img src="Photos/credit card 2.jpeg" class="pay-icon credit-card-icon" alt="">
+                    <p>Credit / Debit Card</p>
+                    <input type="radio" name="pay" class="radio-style" value="Credit / Debit Card">
+                  </label>
+                </div>
+              </div>
+
+              <div id="vodafone-instructions" class="payment-instructions mt-3" hidden>
+                Send payment to Vodafone Cash number: 01000000000, then click Place Order.
+              </div>
+
+              <!-- Card Info -->
+              <div id="card-fields" class="mt-4" hidden>
+                <div class="mb-3">
+                  <label class="form-label" for="card-name">Name on Card</label>
+                  <input id="card-name" data-card-field="name" type="text" class="form-control" placeholder="Name as printed on card">
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="card-number">Card Number</label>
+                    <input id="card-number" data-card-field="number" type="text" class="form-control" placeholder="Card number" inputmode="numeric" maxlength="19">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="card-expiry">Expiry Date</label>
+                    <input id="card-expiry" data-card-field="expiry" type="month" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6">
+                    <label class="form-label" for="card-cvv">CVV</label>
+                    <input id="card-cvv" data-card-field="cvv" type="password" class="form-control" placeholder="123" inputmode="numeric" maxlength="4">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional Info -->
+              <div class="mt-4">
+                <h6 class="section-title">Additional Information</h6>
+
+                <div class="mt-3">
+                  <label class="form-label" for="checkout-notes">Order Notes <span class="optional">(Optional)</span></label>
+                  <textarea id="checkout-notes" data-field="notes" class="form-control" rows="4"
+                    placeholder="Notes about your order, e.g. special delivery instructions"></textarea>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+
+        <!-- RIGHT ORDER SUMMARY -->
+        <div class="col-lg-4">
+          <div class="order-summary p-4">
+
+            <h5 class="summary-title mb-4">Order Summary</h5>
+
+            <!-- Product 1 -->
+            <div class="product d-flex gap-3 mb-3">
+              <img src="Photos/cart 1.jpg"
+                alt="">
+              <div>
+                <h6>Lumina Pearl Drops</h6>
+                <small>18k Yellow Gold / Freshwater Pearl</small>
+                <p class="price">$920.00</p>
+              </div>
+            </div>
+  
+            <!-- Product 2 -->
+            <div class="product d-flex gap-3 mb-4">
+              <img src="Photos/cart 2.jpg"
+                alt="">
+              <div >
+                <h6>Lumina Pearl Drops</h6>
+                <small>18k Yellow Gold / Freshwater Pearl</small>
+                <p class="price">$920.00</p>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="summary-row">
+              <span>Sub-total</span>
+              <span class="red">$56.49</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span class="red">Free</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Discount</span>
+              <span class="red">$5.00</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Tax</span>
+              <span class="red">$8.75</span>
+            </div>
+
+            <hr>
+
+            <div class="total-row">
+              <span>Total</span>
+              <span class="total-price">$60.24 USD</span>
+            </div>
+
+            <button class="btn place-order mt-3 w-100">
+              <div class="content-btn">
+              PLACE ORDER <i class="bi bi-arrow-right ms-2"></i>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+   <!-- Footer -->
+  <footer class="footer-section">
+    <div class=" text-center">
+
+      <!-- Brand -->
+      <h1 class="brand-title">OPHELIA</h1>
+
+      <!-- Links-->
+      <div class="row footer-links justify-content-center gx-5">
+
+        <div class="col-md-2">
+          <h6>SHOP</h6>
+          <ul>
+            <li>All Jewelry</li>
+            <li>The Bridal Edit</li>
+            <li>New Arrivals</li>
+            <li>Gifting</li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h6>THE MAISON</h6>
+          <ul>
+            <li>Our Heritage</li>
+            <li>Craftsmanship</li>
+            <li>Sustainability</li>
+            <li>Careers</li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h6>HELP</h6>
+          <ul>
+            <li>Shipping & Returns</li>
+            <li>Size Guide</li>
+            <li>Jewelry Care</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h6>LEGAL</h6>
+          <ul>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Accessibility</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="copyright mt-5">
+        &copy; 2024 OPHELIA LONDON LTD. ALL RIGHTS RESERVED.
+      </p>
+
+    </div>
+  </footer>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  OVERLAY  -->
+  <div id="overlay"></div>
+
+  <!--  SIDE CART  -->
+  <div id="side-cart">
+
+    <div class="cart-header">
+      <h2 class="my-selection-title">Your Selection</h2>
+      <button id="close-cart" class="cart-close-btn" type="button" aria-label="Close cart">&times;</button>
+    </div>
+
+  <div class="cart-items-area" aria-live="polite"></div>
+
+  <!--  FOOTER  -->
+    <div class="cart-footer">
+      <div class="subtotal">
+        <span class="sub-main">SUBTOTAL</span>
+        <span class="sub-price">$0.00</span>
+      </div>
+
+      <p class="note text-center">
+        Shipping and taxes calculated at checkout.<br>
+        <span>Complimentary shipping</span> applied to your order.
+      </p>
+
+      <button class="checkout text-center">Proceed to Checkout</button>
+      <a href="#" class="continue text-center">Continue shopping</a>
+    </div>
+
+  </div>
+
+
+  <script src="config.js"></script>
+
+
+  <script src="main.js"></script>
+<script src="features.js"></script>
+
+</body>
+</html>
+
+
